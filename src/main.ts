@@ -1,9 +1,13 @@
-'use strict';
+import express from "express";
+import 'dotenv/config';
+
+const app = express();
 
 
-function sayHello(name: string): void {
-    console.log(`Hello, ${name}`)
-}
+app.get("/", function (req, res) {
+    res.send("Hello World");
+});
 
-
-sayHello('Maruf')
+app.listen(process.env.PORT, () => {
+    console.log(`Server is listening on : ${process.env.PORT}`)
+});
