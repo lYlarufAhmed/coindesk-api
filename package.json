@@ -19,7 +19,7 @@
     "express": "^4.17.3"
   },
   "scripts": {
-//    "dev": "",
+    //    "dev": "",
     "start": "npx ts-node src/main.ts",
     "lint": "eslint . --fix"
   }
