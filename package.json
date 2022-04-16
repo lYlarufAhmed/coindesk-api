@@ -1,0 +1,12 @@
+{
+  "name": "coindesk-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/node": "^17.0.24",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
