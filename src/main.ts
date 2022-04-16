@@ -1,6 +1,6 @@
 import express from "express";
 import 'dotenv/config';
-import getBitcoinInfo from "./routes/getBitcoinInfo"
+import getBitcoinInfo from "./routes/getBitcoinInfo/getBitcoinInfo"
 import 'body-parser'
 import bodyParser from "body-parser";
 
@@ -16,6 +16,8 @@ app.get("/", function (req, res) {
 
 app.use('/getBitcoinInfo', urlencodedParser,  getBitcoinInfo)
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server is listening on : ${PORT}`)
 });
+
+export default server
