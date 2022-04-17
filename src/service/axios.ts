@@ -1,4 +1,5 @@
 import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios';
+import {CurrentPriceReturnObj} from "../types/currentPriceReturnObj";
 
 
 
@@ -27,7 +28,7 @@ class Axios {
         return http;
     }
 
-    get<T = unknown, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    get<T = CurrentPriceReturnObj, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
         return this.http.get<T, R>(url, config);
     }
 
