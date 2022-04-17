@@ -2,6 +2,7 @@ import express, {Request, Response, Router} from 'express';
 import {api} from "../../service/axios"
 import {getFormattedDates, getMinMaxPrice} from "../../uttils";
 import {BitcoinInfoObj} from "../../types/bitcoinInfoObj";
+import {AxiosError} from "axios";
 
 const router: Router = express.Router();
 
@@ -28,11 +29,11 @@ router.get('/', async (req: Request, res: Response) => {
             }
             res.json(JSON.stringify(info))
         }
-    } catch (error: any) {
+    } catch (error: unknown) {
         // handle error
-        const status = error?.response?.status
+        const status = (error as AxiosError)?.response?.status
         if (status === 404) {
-            res.status(404).json({message: error?.response?.data})
+            res.status(404).json({message: (error as AxiosError)?.response?.data})
         } else {
             res.status(500).json(error);
         }
